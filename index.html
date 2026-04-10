@@ -1,527 +1,488 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Multimédia</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Vidéo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        :root {
-            --noir: #0a0a0a;
-            --blanc: #fafafa;
-            --gris: #1a1a1a;
-            --accent: #ff3e00;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--noir);
-            color: var(--blanc);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 5%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      border-bottom: 1px solid #222;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
+    .navbar {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .nav-links a {
-            color: var(--blanc);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #7f6bff;
+    }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+    .nav-links a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.25s;
+    }
 
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-            position: relative;
-            overflow: hidden;
-        }
+    .nav-links a:hover {
+      color: #8a7dff;
+    }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(102,126,234,0.1) 0%, transparent 70%);
-            animation: pulse 15s ease-in-out infinite;
-        }
+    .hero {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 60px 28px 30px;
+      text-align: center;
+    }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+    .hero p {
+      font-size: 18px;
+      color: #bbb;
+    }
 
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            letter-spacing: -2px;
-        }
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
 
-        .hero h1 span {
-            display: block;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .title-line {
+      width: 76px;
+      height: 4px;
+      background: #8a7dff;
+      margin: 0 auto 18px;
+      border-radius: 10px;
+    }
 
-        .hero p {
-            font-size: 1.3rem;
-            color: rgba(255,255,255,0.7);
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
+    .section-subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 40px;
+      font-size: 17px;
+    }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--gradient);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 28px 70px;
+    }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
-        }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px;
+    }
 
-        section {
-            padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    .card {
+      background: #121212;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      border: 1px solid #1f1f1f;
+    }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(125, 100, 255, 0.18);
+    }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
+    .card-thumb {
+      position: relative;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
+    .thumb-1 {
+      background: linear-gradient(135deg, #6a85ff, #8b5fd4);
+    }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            aspect-ratio: 4/3;
-            background: var(--gris);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
+    .thumb-2 {
+      background: linear-gradient(135deg, #da8be8, #f25b7f);
+    }
 
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
+    .thumb-3 {
+      background: linear-gradient(135deg, #4cb6b6, #265dff);
+    }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
+    .thumb-4 {
+      background: linear-gradient(135deg, #e9a84d, #ff5a5a);
+    }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
+    .play-btn {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      color: #000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
 
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 2rem 1.5rem 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
+    .card-content {
+      padding: 28px;
+    }
 
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
 
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
+    .card p {
+      color: #c8c8c8;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
 
-        .video-card {
-            background: var(--gris);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
+    .tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
+    .tag {
+      background: rgba(99, 102, 241, 0.18);
+      color: #8fa0ff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 15px;
+    }
 
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
-            aspect-ratio: 16/9;
-            background: #000;
-        }
+    .simple-section {
+      background: #090909;
+      border: 1px solid #1a1a1a;
+      border-radius: 24px;
+      padding: 40px 24px;
+      margin-top: 20px;
+      text-align: center;
+    }
 
-        .video-info {
-            padding: 1.5rem;
-        }
+    .simple-section h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
 
-        .video-info h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
+    .simple-section p {
+      color: #b8b8b8;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 17px;
+    }
 
-        .video-info p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-        }
+    .contact-box {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .tag {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            background: rgba(102,126,234,0.2);
-            color: #667eea;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 1rem;
-            margin-right: 0.5rem;
-        }
+    footer {
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid #1d1d1d;
+      color: #888;
+      font-size: 14px;
+    }
 
-        .reportage {
-            background: var(--gris);
-            border-radius: 24px;
-            padding: 3rem;
-            margin-top: 3rem;
-        }
+    /* Modal vidéo */
+    .video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
 
-        .reportage-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+    .video-modal.active {
+      display: flex;
+    }
 
-        .reportage-meta {
-            display: flex;
-            gap: 2rem;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-        }
+    .video-box {
+      position: relative;
+      width: min(1100px, 96vw);
+      background: #000;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
 
-        .reportage-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-        .reportage-image {
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+    .video-box video {
+      width: 100%;
+      display: block;
+      background: #000;
+      max-height: 80vh;
+    }
 
-        .reportage-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    @media (max-width: 980px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
 
-        .reportage-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
+      .card-thumb {
+        height: 300px;
+      }
 
-        .reportage-text p {
-            color: rgba(255,255,255,0.8);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
+      .hero h1 {
+        font-size: 32px;
+      }
 
-        footer {
-            text-align: center;
-            padding: 3rem 5%;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.5);
-            margin-top: 4rem;
-        }
+      .section-title {
+        font-size: 28px;
+      }
+    }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .reportage-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+      }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s, transform 0.6s;
-        }
+      .nav-links {
+        justify-content: center;
+      }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+      .card-content {
+        padding: 22px;
+      }
+
+      .card h3 {
+        font-size: 21px;
+      }
+
+      .play-btn {
+        width: 82px;
+        height: 82px;
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Portfolio.</div>
-        <ul class="nav-links">
-            <li><a href="#photos">Photos</a></li>
-            <li><a href="#videos">Vidéos</a></li>
-            <li><a href="#reportage">Reportage</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <header>
+    <div class="navbar">
+      <div class="logo">Portfolio.</div>
+      <nav class="nav-links">
+        <a href="#photos">Photos</a>
+        <a href="#videos">Vidéos</a>
+        <a href="#reportage">Reportage</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Mon Univers <span>Créatif</span></h1>
-            <p>Photographie, montage vidéo et reportages. Découvrez mon travail à travers ces différentes disciplines du multimédia.</p>
-            <a href="#photos" class="cta-button">Découvrir mes créations</a>
+  <div class="hero">
+    <h1>Mon Portfolio Vidéo</h1>
+    <p>Montage vidéo, courts-métrages, clips et projets créatifs.</p>
+  </div>
+
+  <section id="videos">
+    <h2 class="section-title">Vidéos</h2>
+    <div class="title-line"></div>
+    <p class="section-subtitle">Projets de montage vidéo, courts-métrages et clips.</p>
+
+    <div class="cards-grid">
+      <div class="card" data-video="videos/attente.mp4">
+        <div class="card-thumb thumb-1">
+          <div class="play-btn">▶</div>
         </div>
-    </header>
-
-    <section id="photos" class="fade-in">
-        <h2 class="section-title">Photographie</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800" alt="Photo 1">
-                <div class="gallery-overlay">
-                    <h3>Portrait Urbain</h3>
-                    <p>Série photographique</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Photo 2">
-                <div class="gallery-overlay">
-                    <h3>Paysage Naturel</h3>
-                    <p>Au lever du soleil</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800" alt="Photo 3">
-                <div class="gallery-overlay">
-                    <h3>Architecture</h3>
-                    <p>Géométrie et perspectives</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800" alt="Photo 4">
-                <div class="gallery-overlay">
-                    <h3>Noir & Blanc</h3>
-                    <p>Étude des contrastes</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800" alt="Photo 5">
-                <div class="gallery-overlay">
-                    <h3>Portrait Studio</h3>
-                    <p>Éclairage naturel</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800" alt="Photo 6">
-                <div class="gallery-overlay">
-                    <h3>Nature Morte</h3>
-                    <p>Composition et lumière</p>
-                </div>
-            </div>
+        <div class="card-content">
+          <h3>Court-métrage "L'Attente"</h3>
+          <p>Un film de 5 minutes explorant le temps qui passe dans les espaces publics.</p>
+          <div class="tags">
+            <span class="tag">Court-métrage</span>
+            <span class="tag">3min 42s</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="videos" class="fade-in">
-        <h2 class="section-title">Montage Vidéo</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <video controls poster="https://via.placeholder.com/640x360/667eea/ffffff?text=Vidéo+1">
-                    <source src="videos/video1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
-                <div class="video-info">
-                    <h3>Court-métrage "L'Attente"</h3>
-                    <p>Un film explorant le temps qui passe.</p>
-                    <span class="tag">3min 42s</span>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <video controls poster="https://via.placeholder.com/640x360/f093fb/ffffff?text=Vidéo+2">
-                    <source src="videos/video2.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
-                <div class="video-info">
-                    <h3>Vlog Voyage</h3>
-                    <p>Documentation d'un voyage au Japon.</p>
-                    <span class="tag">8min 15s</span>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <video controls poster="https://via.placeholder.com/640x360/4facfe/ffffff?text=Vidéo+3">
-                    <source src="videos/video3.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
-                <div class="video-info">
-                    <h3>Clip Musical</h3>
-                    <p>Montage rythmé pour un artiste local.</p>
-                    <span class="tag">3min 30s</span>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <video controls poster="https://via.placeholder.com/640x360/43e97b/ffffff?text=Vidéo+4">
-                    <source src="videos/video4.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
-                <div class="video-info">
-                    <h3>Documentaire École</h3>
-                    <p>Portrait de la communauté scolaire.</p>
-                    <span class="tag">12min</span>
-                </div>
-            </div>
+      <div class="card" data-video="videos/tokyo.mp4">
+        <div class="card-thumb thumb-2">
+          <div class="play-btn">▶</div>
         </div>
-    </section>
-
-    <section id="reportage" class="fade-in">
-        <h2 class="section-title">Reportage</h2>
-        <div class="reportage">
-            <div class="reportage-header">
-                <div>
-                    <h3 style="font-size: 1.5rem;">Les Artisans du Quartier</h3>
-                    <div class="reportage-meta">
-                        <span>📅 Mars 2026</span>
-                        <span>📍 Quartier Saint-Michel</span>
-                    </div>
-                </div>
-            </div>
-            <div class="reportage-content">
-                <div class="reportage-image">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" alt="Reportage">
-                </div>
-                <div class="reportage-text">
-                    <h3>À la rencontre des commerçants</h3>
-                    <p>Pendant trois semaines, j'ai arpenté les rues à la rencontre des artisans et commerçants qui donnent son âme à ce quartier.</p>
-                </div>
-            </div>
+        <div class="card-content">
+          <h3>Vlog Voyage - Tokyo</h3>
+          <p>Série de vidéos documentant mon voyage au Japon avec techniques de montage dynamiques.</p>
+          <div class="tags">
+            <span class="tag">Vlog</span>
+            <span class="tag">8min 15s</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <footer id="contact">
-        <p style="font-size: 1.2rem; color: white;">Merci de votre visite !</p>
-        <p>© 2026 - Portfolio Multimédia</p>
-    </footer>
+      <div class="card" data-video="videos/clip.mp4">
+        <div class="card-thumb thumb-3">
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="card-content">
+          <h3>Clip Créatif</h3>
+          <p>Montage visuel rythmé avec transitions modernes, ambiance cinématique et effets stylisés.</p>
+          <div class="tags">
+            <span class="tag">Clip</span>
+            <span class="tag">2min 58s</span>
+          </div>
+        </div>
+      </div>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
+      <div class="card" data-video="videos/reportage.mp4">
+        <div class="card-thumb thumb-4">
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="card-content">
+          <h3>Mini Reportage</h3>
+          <p>Projet de reportage avec interviews, plans d’ambiance et narration structurée.</p>
+          <div class="tags">
+            <span class="tag">Reportage</span>
+            <span class="tag">4min 10s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
+  <section id="photos">
+    <div class="simple-section">
+      <h2>Photos</h2>
+      <p>Ajoute ici tes projets photo, affiches, captures de montage ou images de tournage.</p>
+    </div>
+  </section>
+
+  <section id="reportage">
+    <div class="simple-section">
+      <h2>Reportage</h2>
+      <p>Cette section peut présenter ton reportage scolaire, ses objectifs, ses interviews et ses séquences de tournage.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="simple-section contact-box">
+      <h2>Contact</h2>
+      <p>Email : tonemail@example.com<br>Téléphone : 000-000-0000</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Portfolio - Tous droits réservés
+  </footer>
+
+  <div class="video-modal" id="videoModal">
+    <div class="video-box">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <video id="modalVideo" controls>
+        <source id="modalSource" src="" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalSource = document.getElementById('modalSource');
+    const closeModal = document.getElementById('closeModal');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const videoPath = card.getAttribute('data-video');
+        modalSource.src = videoPath;
+        modalVideo.load();
+        modal.classList.add('active');
+        modalVideo.play().catch(() => {});
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modalVideo.pause();
+      modal.classList.remove('active');
+      modalSource.src = "";
+      modalVideo.load();
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modalVideo.pause();
+        modal.classList.remove('active');
+        modalSource.src = "";
+        modalVideo.load();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modalVideo.pause();
+        modal.classList.remove('active');
+        modalSource.src = "";
+        modalVideo.load();
+      }
+    });
+  </script>
+
 </body>
 </html>
