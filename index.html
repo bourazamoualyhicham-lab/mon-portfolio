@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Histoire du Maroc — Repères & Dynasties</title>
+  <meta name="description" content="Site éducatif : repères chronologiques, dynasties, villes, patrimoines et grands moments de l'histoire du Maroc." />
+  <style>
+    :root{
+      --bg:#071016;
+      --card:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12);
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.72);
+      --accent:#ffcc66;
+      --accent2:#7bd3ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:linear-gradient(180deg,#050b10,var(--bg));
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter: blur(10px);
+      background:rgba(5,11,16,.70);
+      border-bottom:1px solid var(--border);
+    }
+    nav{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .logo{font-weight:900;letter-spacing:.3px;display:flex;align-items:center;gap:10px}
+    .badge{font-size:12px;padding:5px 10px;border-radius:999px;background:rgba(255,204,102,.14);border:1px solid rgba(255,204,102,.35);color:#ffe0a3}
+    .menu{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      padding:10px 12px;border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      display:inline-flex;align-items:center;gap:8px;
+    }
+    .btn.primary{background:var(--accent);border-color:transparent;color:#221600;font-weight:800}
+    .hero{padding:46px 0 18px}
+    .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:stretch}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 18px 60px rgba(0,0,0,.22);
+    }
+    h1{margin:0 0 10px;font-size:44px;line-height:1.06}
+    h2{margin:0 0 12px;font-size:28px}
+    h3{margin:0 0 10px;font-size:18px}
+    p{margin:0 0 12px;color:var(--muted)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    @media (max-width:600px){.kpis{grid-template-columns:1fr}}
+    .kpi{padding:12px;border-radius:16px;border:1px solid var(--border);background:rgba(0,0,0,.18)}
+    .kpi b{display:block;font-size:20px;margin-bottom:2px;color:var(--text)}
+    section{padding:22px 0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){.cards{grid-template-columns:1fr}}
+    .tag{
+      display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;
+      background:rgba(123,211,255,.12);border:1px solid rgba(123,211,255,.35);color:#cfefff
+    }
+    .timeline{display:grid;gap:10px}
+    .titem{
+      display:grid;grid-template-columns:120px 1fr;gap:12px;
+      padding:12px;border-radius:16px;border:1px solid var(--border);background:rgba(0,0,0,.18)
+    }
+    @media (max-width:650px){.titem{grid-template-columns:1fr}}
+    .year{font-weight:900;color:var(--accent)}
+    .small{font-size:12px;color:rgba(234,242,255,.6)}
+    .list{margin:0;padding-left:18px;color:var(--muted)}
+    .divider{height:1px;background:var(--border);margin:14px 0}
+    .quizQ{margin:10px 0 8px;color:var(--text);font-weight:700}
+    .opt{display:block;margin:8px 0}
+    .opt input{transform:translateY(1px)}
+    footer{border-top:1px solid var(--border);padding:22px 0 40px;color:var(--muted);margin-top:14px}
+    .note{padding:10px 12px;border-radius:14px;border:1px dashed rgba(255,204,102,.45);background:rgba(255,204,102,.08);color:#ffe8bf}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="logo">
+          🏛️ Histoire du Maroc
+          <span class="badge">Repères • Dynasties • Culture</span>
+        </div>
+        <div class="menu">
+          <a class="btn" href="#repères">Repères</a>
+          <a class="btn" href="#dynasties">Dynasties</a>
+          <a class="btn" href="#culture">Patrimoine</a>
+          <a class="btn" href="#quiz">Quiz</a>
+          <a class="btn primary" href="#sources">Sources</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="top">
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Site éducatif (résumé clair)</span>
+          <h1>Le Maroc à travers le temps</h1>
+          <p>
+            Une vue d’ensemble de l’histoire du Maroc : des racines amazighes et des échanges méditerranéens,
+            jusqu’aux grandes dynasties, à la période moderne et à l’État contemporain.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+            <a class="btn primary" href="#repères">Commencer la timeline</a>
+            <a class="btn" href="#dynasties">Voir les dynasties</a>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi"><b>~3000 ans</b><div class="small">d’histoire écrite & échanges</div></div>
+            <div class="kpi"><b>4</b><div class="small">pôles : Atlantique, Méditerranée, Sahara, Montagnes</div></div>
+            <div class="kpi"><b>1</b><div class="small">identité plurielle : amazighe, arabe, africaine, méditerranéenne</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Comment utiliser ce site</h3>
+          <p>• Lis les repères, puis explore les dynasties.</p>
+          <p>• Regarde les villes et le patrimoine.</p>
+          <p>• Termine avec le mini quiz.</p>
+          <div class="divider"></div>
+          <div class="note">
+            ⚠️ Ce site est un résumé : il simplifie certains débats historiques.
+            La section “Sources” te donne des pistes fiables pour aller plus loin.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="repères">
+      <h2>Repères chronologiques</h2>
+      <div class="timeline">
+        <div class="titem">
+          <div class="year">Antiquité</div>
+          <div>
+            <div class="small">Amazighs, échanges, influences méditerranéennes</div>
+            <p>
+              Le territoire marocain participe tôt aux réseaux commerciaux et culturels (côtes atlantiques et méditerranéennes),
+              avec des contacts phéniciens puis des ensembles politiques et urbains liés au monde antique.
+            </p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="year">VIIe–VIIIe s.</div>
+          <div>
+            <div class="small">Islamisation progressive & nouveaux pouvoirs</div>
+            <p>
+              L’arrivée de l’islam transforme durablement les structures politiques et sociales, tout en s’articulant
+              avec des dynamiques locales amazighes.
+            </p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="year">XIe–XIIIe s.</div>
+          <div>
+            <div class="small">Almoravides, puis Almohades</div>
+            <p>
+              Période d’expansion et de grands projets urbains, avec un rayonnement qui dépasse largement le Maroc
+              (Maghreb et al-Andalus).
+            </p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="year">XIIIe–XVe s.</div>
+          <div>
+            <div class="small">Mérinides & dynamiques savantes</div>
+            <p>
+              Développement d’institutions religieuses et éducatives (médersas), consolidation de certaines villes
+              comme centres politiques et intellectuels.
+            </p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="year">XVIe–XVIIe s.</div>
+          <div>
+            <div class="small">Saadiens, puis Alaouites</div>
+            <p>
+              Renforcement de l’État, diplomatie et commerce, intégration des routes sahariennes et ouverture
+              vers l’Atlantique.
+            </p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="year">1912–1956</div>
+          <div>
+            <div class="small">Protectorats & transformations</div>
+            <p>
+              Période de reconfiguration administrative et économique, et montée des mouvements nationalistes,
+              jusqu’à l’indépendance.
+            </p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="year">Depuis 1956</div>
+          <div>
+            <div class="small">État contemporain</div>
+            <p>
+              Construction institutionnelle, modernisation, enjeux sociaux et territoriaux (villes, régions,
+              infrastructures), dans une continuité historique longue.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dynasties">
+      <h2>Dynasties (aperçu rapide)</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Almoravides</h3>
+          <p>Unification et expansion ; impulsion urbaine et commerciale.</p>
+          <ul class="list">
+            <li>Consolidation d’un pouvoir régional fort</li>
+            <li>Rayonnement sur un vaste espace maghrébin</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Almohades</h3>
+          <p>Grande puissance politique ; projets architecturaux majeurs.</p>
+          <ul class="list">
+            <li>Réformes religieuses et centralisation</li>
+            <li>Influence jusqu’en al-Andalus</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Mérinides</h3>
+          <p>Accent sur les institutions savantes et les villes.</p>
+          <ul class="list">
+            <li>Médersas et vie intellectuelle</li>
+            <li>Rôle de Fès comme centre important</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Saadiens</h3>
+          <p>Diplomatie, commerce, et affirmation du Maroc à l’international.</p>
+          <ul class="list">
+            <li>Contrôle stratégique de routes et ports</li>
+            <li>Architecture et puissance symbolique</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Alaouites</h3>
+          <p>Dynastie régnante ; continuité de l’État et adaptations modernes.</p>
+          <ul class="list">
+            <li>Consolidation institutionnelle</li>
+            <li>Réformes et transformations contemporaines</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Villes & régions clés</h3>
+          <p>Fès, Marrakech, Meknès, Rabat, Tanger… et l’espace saharien.</p>
+          <ul class="list">
+            <li>Carrefours du commerce et du savoir</li>
+            <li>Articulation montagnes–plaines–déserts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="culture">
+      <h2>Patrimoine & identité</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Un pays de passages</h3>
+          <p>
+            Le Maroc est un espace charnière entre Afrique, Méditerranée et Atlantique.
+            Cette position explique la richesse des influences : langues, architectures, musiques,
+            artisanats, et formes de sociabilité.
+          </p>
+          <div class="divider"></div>
+          <h3>Exemples (à explorer)</h3>
+          <ul class="list">
+            <li>Les médinas et leurs métiers</li>
+            <li>L’architecture des dynasties (mosquées, médersas, palais)</li>
+            <li>Les routes caravanières et les oasis</li>
+            <li>Les traditions amazighes et arabes, et leur continuité</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Carte (texte)</h3>
+          <p>
+            Pour une “carte mentale” rapide, imagine 4 grands espaces :
+          </p>
+          <ul class="list">
+            <li><b>Littoraux</b> : ports, échanges atlantiques et méditerranéens</li>
+            <li><b>Plaines</b> : agriculture, villes, axes de circulation</li>
+            <li><b>Montagnes</b> : Atlas/Rif, sociétés rurales et ressources</li>
+            <li><b>Sahara</b> : oasis, commerce transsaharien, mobilité</li>
+          </ul>
+          <div class="divider"></div>
+          <div class="small">
+            Tu peux ajouter plus tard une vraie carte (image) ou une carte interactive.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <h2>Mini quiz (pour réviser)</h2>
+      <div class="card">
+        <div class="quizQ">1) Le Maroc est souvent décrit comme un carrefour entre…</div>
+        <label class="opt"><input type="radio" name="q1" value="a"> L’Asie centrale et l’Océanie</label>
+        <label class="opt"><input type="radio" name="q1" value="b"> L’Afrique, l’Atlantique et la Méditerranée</label>
+        <label class="opt"><input type="radio" name="q1" value="c"> L’Antarctique et l’Europe du Nord</label>
+
+        <div class="quizQ">2) Parmi ces ensembles, lesquels sont des dynasties majeures du Maroc médiéval ?</div>
+        <label class="opt"><input type="radio" name="q2" value="a"> Almoravides et Almohades</label>
+        <label class="opt"><input type="radio" name="q2" value="b"> Vikings et Carolingiens</label>
+        <label class="opt"><input type="radio" name="q2" value="c"> Aztèques et Mayas</label>
+
+        <div class="quizQ">3) L’indépendance du Maroc (fin de la période des protectorats) se situe en…</div>
+        <label class="opt"><input type="radio" name="q3" value="a"> 1492</label>
+        <label class="opt"><input type="radio" name="q3" value="b"> 1956</label>
+        <label class="opt"><input type="radio" name="q3" value="c"> 2001</label>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+          <button class="btn primary" onclick="gradeQuiz()">Corriger</button>
+          <button class="btn" onclick="resetQuiz()">Réinitialiser</button>
+          <span class="small" id="result"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>Sources & pour aller plus loin</h2>
+      <div class="card">
+        <p>
+          Pour approfondir avec des références sérieuses (universités, encyclopédies, musées),
+          consulte des ouvrages d’histoire du Maghreb et des ressources institutionnelles.
+        </p>
+        <ul class="list">
+          <li>Encyclopédies et introductions à l’histoire du Maghreb</li>
+          <li>Musées et institutions patrimoniales (histoire des villes, architecture, arts)</li>
+          <li>Ouvrages sur les dynasties (Almoravides, Almohades, Mérinides, Saadiens, Alaouites)</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="small">
+          Si tu veux, je peux aussi te faire une page “bibliographie” détaillée (avec liens et dates),
+          et une version en arabe + français.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">© <span id="y"></span> — Histoire du Maroc (site éducatif). Fait pour apprendre, pas pour remplacer un cours complet.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function gradeQuiz(){
+      const answers = { q1:"b", q2:"a", q3:"b" };
+      let score = 0, total = 3;
+
+      for(const q of Object.keys(answers)){
+        const picked = document.querySelector('input[name="'+q+'"]:checked');
+        if(picked && picked.value === answers[q]) score++;
+      }
+
+      const el = document.getElementById('result');
+      el.textContent = "Score : " + score + "/" + total + (score===total ? " ✅" : " — Tu peux refaire 🙂");
+    }
+
+    function resetQuiz(){
+      document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
+      document.getElementById('result').textContent = "";
+    }
+  </script>
+</body>
+</html>
